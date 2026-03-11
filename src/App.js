@@ -53,8 +53,8 @@ export default function App() {
   // Request notification permission on login
   useEffect(() => {
     if (user) requestPermission();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
-
   // Send notifications when overspending
   useEffect(() => {
     if (!dataLoaded || !user) return;
@@ -139,6 +139,7 @@ export default function App() {
       }
     };
     saveData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [expenses, savedIncome, categoryGoals, lastReset, currency, language, recurringExpenses, user, dataLoaded]);
 
   if (!user) return <Login />;
