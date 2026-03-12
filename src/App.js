@@ -53,7 +53,7 @@ export default function App() {
   // Request notification permission on login
   useEffect(() => {
     if (user) requestPermission();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [user]);
   // Send notifications when overspending
   useEffect(() => {
@@ -125,6 +125,7 @@ export default function App() {
       setDataLoaded(true);
     };
     loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   // Save data to Firestore only AFTER data has been loaded
